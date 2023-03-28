@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028326, g: 0.22571333, b: 0.30692202, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -998,6 +998,7 @@ GameObject:
   - component: {fileID: 2058675173}
   - component: {fileID: 2058675172}
   - component: {fileID: 2058675175}
+  - component: {fileID: 2058675176}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -1014,17 +1015,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 2058675171}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce8c01d6c2a0b4bcba26d6597025d365, type: 3}
+  m_Script: {fileID: 11500000, guid: 885ac8c12307d499aae5d033964899a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menuItems:
-  - {fileID: 844218698}
-  - {fileID: 1363737303}
-  - {fileID: 270084837}
-  - {fileID: 213819622}
-  - {fileID: 498592703}
-  - {fileID: 1220186148}
-  selectedItemIndex: 0
+  turnCount: 0
+  items: 0a000000
 --- !u!114 &2058675173
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1034,11 +1029,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 2058675171}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7cfaef0d96de945a49176b3659456872, type: 3}
+  m_Script: {fileID: 11500000, guid: 8b47401bb8b09418c9a2c5c3e92b4eed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  turnCount: 0
-  items: 0a000000
 --- !u!4 &2058675174
 Transform:
   m_ObjectHideFlags: 0
@@ -1063,8 +1056,28 @@ MonoBehaviour:
   m_GameObject: {fileID: 2058675171}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b8e23afe55d734025b81bb1265fa0208, type: 3}
+  m_Script: {fileID: 11500000, guid: 67668e420939340f89d52202066ed73c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerManager: {fileID: 2058675173}
-  uiManager: {fileID: 2058675172}
+  menuItems:
+  - {fileID: 844218698}
+  - {fileID: 1363737303}
+  - {fileID: 270084837}
+  - {fileID: 213819622}
+  - {fileID: 498592703}
+  - {fileID: 1220186148}
+  selectedItemIndex: 0
+--- !u!114 &2058675176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2058675171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95db4132d6da742f9bba160b10105eda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerManager: {fileID: 2058675172}
+  uiManager: {fileID: 2058675175}

@@ -28,6 +28,7 @@ public class GameManager : MonoBehaviour
 void Next(int _direction)
     {
         //_directionの値でswitch
+        //TO-DO:進めなかった時の処理        
         switch (_direction)
         {
             case 0:
