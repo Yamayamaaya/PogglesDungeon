@@ -1,10 +1,14 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour {
 
     public GameObject[] menuItems; // メニュー項目の配列
     public int selectedItemIndex = 0; // 現在選択されているメニュー項目のインデックス
+
+    public Transform cameraTransform;
+
 
     void Start () {
         UpdateMenuItemSelection(); // 初期のメニュー項目の選択状態を更新
@@ -41,4 +45,21 @@ public class UIManager : MonoBehaviour {
             }
         }
     }
+
+
+
+
+    public void StartScene()
+    {
+        cameraTransform.position = new Vector3(1388, 480, -830);
+    }
+    public void PlayScene()
+    {
+        cameraTransform.position = new Vector3(300, 480, -830);
+    }
+    public void CollectionScene()
+    {
+        cameraTransform.position = new Vector3(1388, -654, -830);
+    }
+
 }
