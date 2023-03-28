@@ -1,13 +1,23 @@
+using System.Data.Common;
 using UnityEngine;
+using System;
 
 public class PlayerManager : MonoBehaviour
 {
-    // 現在のターン経過数
+    public ItemData itemData;
+    public Data data;
     public int turnCount;
 
-    //座標情報
     public int[,] position = {{5,5,0},{0,0,0}};
+    public int[] items ;
+    public int[] consumableItems;
 
-    // アイテム保持状態 int[]
-    public int[] items = {10};
+void Start()
+    {
+        items = new int[data.items.Count];
+    }
+
+void Update() {
+    Array.Copy( items,1,  consumableItems, 0, 4);
+}
 }

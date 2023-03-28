@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
         choosing,
         pause
     }
+    
 
 //TO-DO:セーブ機能
 //TO-DO:タイトル画面とゲーム画面の切り替え
