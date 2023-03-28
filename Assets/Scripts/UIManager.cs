@@ -1,10 +1,16 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour {
 
     public GameObject[] menuItems; // メニュー項目の配列
     public int selectedItemIndex = 0; // 現在選択されているメニュー項目のインデックス
+
+    public Transform cameraTransform;
+    public Button MoveStart;
+    public Button MovePlay;
+    public Button MoveResult;
 
     void Start () {
         UpdateMenuItemSelection(); // 初期のメニュー項目の選択状態を更新
@@ -40,5 +46,18 @@ public class UIManager : MonoBehaviour {
                 menuItems[i].GetComponent<UnityEngine.UI. Text>().text　= menuItems[i].GetComponent<UnityEngine.UI. Text>().text.Replace("▶", "");
             }
         }
+    }
+
+    public void StartScene()
+    {
+        cameraTransform.position = new Vector3(1800, 480, -835);
+    }
+    public void PlayScene()
+    {
+        cameraTransform.position = new Vector3(300, 480, -835);
+    }
+    public void ResultScene()
+    {
+        cameraTransform.position = new Vector3(1800, -700, -835);
     }
 }
