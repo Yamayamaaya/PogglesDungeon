@@ -78,16 +78,16 @@ public class Data : MonoBehaviour
 
     void Start()
     {
-    // Set the correct item sprites
-    for (int i = 1; i <= 4; i++)
-    {
-        items[i].itemSprite = itemSprites[i];
-    }
+    // // Set the correct item sprites
+    // for (int i = 1; i <= 4; i++)
+    // {
+    //     items[i].itemSprite = itemSprites[i];
+    // }
 
-    // Set the correct event sprites
-    for (int i = 0; i <= 1; i++)
-    {
-        events[i].eventSprite = eventSprites[i];
-    }
+    // // Set the correct event sprites
+    // for (int i = 0; i <= 1; i++)
+    // {
+    //     events[i].eventSprite = eventSprites[i];
+    // }
     }
 }
