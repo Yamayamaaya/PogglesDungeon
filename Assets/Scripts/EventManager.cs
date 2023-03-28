@@ -6,7 +6,7 @@ public class EventManager : MonoBehaviour
 {
 
     //TO-DO:座標に応じてイベントをとってくる
-    //TO-DO:イベントの処理
+    //TO-DO:イベントの処理aa
     //TO-DO:UIの表示
     //TO-DO:条件分岐
     //TO-DO:資源増減
