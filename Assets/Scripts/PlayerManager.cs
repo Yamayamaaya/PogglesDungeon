@@ -21,6 +21,7 @@ void Start()
     }
 
 void Update() {
-    // Array.Copy( items,1,  consumableItems, 0, 4);
+    // // Array.Copy( items,1,  consumableItems, 0, 4);
+    // consumableItems ={0,0,0,0};
 }
 }
