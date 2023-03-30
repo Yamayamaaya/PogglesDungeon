@@ -17,7 +17,6 @@ public class UIManager : MonoBehaviour {
     public UnityEngine.UI.Text goldText; // 金の数を表示するUIテキスト
     public Transform cameraTransform;
 
-
     void Start () {
         UpdateMenuItemSelection(); // 初期のメニュー項目の選択状態を更新
     }
