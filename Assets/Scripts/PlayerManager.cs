@@ -1,14 +1,17 @@
-using System.Data.Common;
+using System.Collections.Generic;
 using UnityEngine;
 using System;
 
 public class PlayerManager : MonoBehaviour
 {
-    public ItemData itemData;
     public Data data;
     public int turnCount;
 
+
+
     public int[,] position = {{5,5,0},{0,0,0}};
+
+    // TO-DO:大地区の番地更新 
     public int[] items ;
     public int[] consumableItems;
 

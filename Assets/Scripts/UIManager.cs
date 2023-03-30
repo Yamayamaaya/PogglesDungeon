@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour {
 
@@ -14,6 +15,7 @@ public class UIManager : MonoBehaviour {
     public UnityEngine.UI.Text pickaxeText; // ツルハシのレベルを表示するUIテキスト
     public UnityEngine.UI.Text ironText; // 鉄の数を表示するUIテキスト
     public UnityEngine.UI.Text goldText; // 金の数を表示するUIテキスト
+    public Transform cameraTransform;
 
     void Start () {
         UpdateMenuItemSelection(); // 初期のメニュー項目の選択状態を更新
@@ -70,4 +72,21 @@ public class UIManager : MonoBehaviour {
         ironText.text = "Iron: " + gameData.items[3].itemCount.ToString();
         goldText.text = "Gold: " + gameData.items[4].itemCount.ToString();*/
     }
+
+
+
+
+    public void StartScene()
+    {
+        cameraTransform.position = new Vector3(1388, 480, -830);
+    }
+    public void PlayScene()
+    {
+        cameraTransform.position = new Vector3(300, 480, -830);
+    }
+    public void CollectionScene()
+    {
+        cameraTransform.position = new Vector3(1388, -654, -830);
+    }
+
 }
