@@ -7,7 +7,7 @@ public class UIManager : MonoBehaviour {
     public GameObject[] menuItems; // メニュー項目の配列
     public int selectedItemIndex = 0; // 現在選択されているメニュー項目のインデックス
 
-    public Data gameData; // Dataクラスの参照
+    public PlayerManager playerManager;
 
     public UnityEngine.UI.Text turnText; // 経過ターンを表示するUIテキスト
     public UnityEngine.UI.Text foodText; // 食糧数を表示するUIテキスト
@@ -15,10 +15,13 @@ public class UIManager : MonoBehaviour {
     public UnityEngine.UI.Text pickaxeText; // ツルハシのレベルを表示するUIテキスト
     public UnityEngine.UI.Text ironText; // 鉄の数を表示するUIテキスト
     public UnityEngine.UI.Text goldText; // 金の数を表示するUIテキスト
-    public Transform cameraTransform;
+    public UnityEngine.UI.Text displayText; // 金の数を表示するUIテキスト
+    public SpriteRenderer displayImage; // 画像を表示するスプライト
+    // public Transform cameraTransform;
+
+    private char[] charArray;
 
     void Start () {
-        UpdateMenuItemSelection(); // 初期のメニュー項目の選択状態を更新
     }
 
     void Update () {
@@ -41,7 +44,7 @@ public class UIManager : MonoBehaviour {
         if (selectedItemIndex < 0) {
             selectedItemIndex = menuItems.Length - 1;
         }
-        UpdateMenuItemSelection();
+        UpdateUI();
     }
 
     public void DownButton(){
@@ -49,10 +52,10 @@ public class UIManager : MonoBehaviour {
         if (selectedItemIndex >= menuItems.Length) {
             selectedItemIndex = 0;
         }
-        UpdateMenuItemSelection();
+        UpdateUI();
     }
 
-    void UpdateMenuItemSelection() {
+    public void UpdateUI() {
         // 現在選択されているメニュー項目を強調表示する
         for (int i = 0; i < menuItems.Length; i++) {
             if (i == selectedItemIndex) {
@@ -64,29 +67,50 @@ public class UIManager : MonoBehaviour {
             }
         }
 
-        // Dataクラスから情報を取得し、UIに表示する
-        //turnText.text = "Turn: " + gameData.turnCount.ToString();
-        /*foodText.text = "Food: " + gameData.items[1].itemCount.ToString();
-        knifeText.text = "Knife: " + gameData.items[2].itemCount.ToString();
-        pickaxeText.text = "Pickaxe Level: " + gameData.items[7].itemCount.ToString();
-        ironText.text = "Iron: " + gameData.items[3].itemCount.ToString();
-        goldText.text = "Gold: " + gameData.items[4].itemCount.ToString();*/
+        // PlayerManagerクラスから情報を取得し、UIに表示する
+        turnText.text = "Turn: " + playerManager.turnCount.ToString();
+        foodText.text = "Food: " + playerManager.itemCount[0].count.ToString();
+        knifeText.text = "Knife: " + playerManager.itemCount[1].count.ToString();
+        pickaxeText.text = "Pickaxe Level: " + playerManager.itemCount[2].count.ToString();
+        ironText.text = "Iron: " +  playerManager.itemCount[3].count.ToString();
+        goldText.text = "Gold: " + playerManager.itemCount[4].count.ToString();
     }
 
+    //テキストと画像表示
+    public void Display(string displayText, string displayImageName){
+            displayImage.sprite = Resources.Load<Sprite>(displayImageName);
+            charArray = displayText.ToCharArray();
+            StartCoroutine("SetText");
+    }
 
-
-
-    public void StartScene()
+    //TODO : 決定ボタン連打で文字送りスキップ
+    IEnumerator SetText()
     {
-        cameraTransform.position = new Vector3(1388, 480, -830);
+        foreach (var c in charArray)
+        {
+            displayText.text = displayText.text + c;
+            yield return new WaitForSeconds(0.1f);
+        }
     }
-    public void PlayScene()
-    {
-        cameraTransform.position = new Vector3(300, 480, -830);
+
+    public void ResetText(){
+        displayText.text = "";
     }
-    public void CollectionScene()
-    {
-        cameraTransform.position = new Vector3(1388, -654, -830);
-    }
+
+
+
+    //TODO : シーン遷移でカメラ移動
+    // public void StartScene()
+    // {
+    //     cameraTransform.position = new Vector3(1388, 480, -830);
+    // }
+    // public void PlayScene()
+    // {
+    //     cameraTransform.position = new Vector3(300, 480, -830);
+    // }
+    // public void CollectionScene()
+    // {
+    //     cameraTransform.position = new Vector3(1388, -654, -830);
+    // }
 
 }

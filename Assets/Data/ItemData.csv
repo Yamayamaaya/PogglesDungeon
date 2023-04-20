@@ -1,0 +1,7 @@
+name,code,type
+食料,food,consumption
+ナイフ,knife,consumption
+つるはし,pickaxe,consumption
+鉄,iron,consumption
+金,gold,consumption
+光の剣,sword_of_light,unique
